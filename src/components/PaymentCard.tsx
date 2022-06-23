@@ -1,4 +1,5 @@
 import { Box, Button, TextField } from '@mui/material';
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { ChangeEvent } from 'react';
@@ -45,6 +46,14 @@ const PaymentCard = () => {
 
     const submitHandler = () => {
         console.log([cardNumber, cardDate, cardCVV, amount])
+        const body = {
+            CardNumber: cardNumber,
+            ExpDate: cardDate,
+            Cvv: cardCVV,
+            Amount: amount
+        }
+        axios.post('https://quiet-beach-89790.herokuapp.com/', body)
+        .then(res => console.log(res.data))
     }
 
     useEffect(() => {
