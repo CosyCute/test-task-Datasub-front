@@ -1,10 +1,16 @@
+import { Box, Typography } from "@mui/material";
+import PaymentCard from './../components/PaymentCard';
 
 
 const index = () => {
     return (
-        <div>
-            <div></div>
-            <h1>Главная страница</h1>
+        <div className="body">
+            <Box>
+                <Typography color="white" variant="h3">
+                    Payment
+                </Typography>
+                <PaymentCard />
+            </Box>
         </div>
     );
 };

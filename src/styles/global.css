@@ -4,3 +4,46 @@
     border: 0;
     box-sizing: border-box;
 }
+
+body {
+    /* background: rgb(0, 140, 255); */
+    background: linear-gradient(to top left, #66baff, #0081eb);
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, #0081eb 0%, #0081eb 50%, #66baff 50%, #66baff 100%);
+    transition: left .7s;
+}
+
+button:hover:before {
+    left: 0;
+}
+button span{
+    position: relative;
+}
